@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "microsoft yahei";
+}
+.dec {
+    color: #081232;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+img {
+    border: none;
+}
+a {
+    text-decoration: none;
+}
+ol, ul {
+    list-style: none;
+}
+div {
+    display: block;
+}
+.w1200 {
+    width: 1300px;
+    margin: 0 auto;
+    position: relative;
+}
+.case_box {
+    /* width: 100%; */
+    /* background: url(../images/case_bg.jpg) no-repeat center top; */
+    height: auto;
+}
+.case_box h3 {
+    position: relative;
+    color: #081232;
+    font-weight: normal;
+    font-size: 28px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.case_box .category ul {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 40px;
+    display: block;
+    height: auto;
+    overflow: hidden;
+}
+.case_box .category ul li {
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    width: 400px;
+    height: 58px;
+    line-height: 58px;
+    color: #939aac;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.case_box .category ul li.active {
+    color: #fff;
+    background: #252A37;
+}
+.case_box .content {
+    padding-left: 10%
+}
+.case_box .content .cont {
+    height: 650px;
+    display: none;
+}
+.case_box .content .cont.active {
+    display: block;
+    
+}
+.case_box .content .cont img.bg {
+    width: 54%;
+    height: auto;
+    position: absolute;border: 1px solid #E3E3E3;
+    right: 0;
+    top: -1em;
+}
+.case_box .content .cont .info {
+    position: absolute;
+    width: 40%;
+    height: auto;
+    background: #fff;
+    box-shadow: 0px 0px 70px rgba(157, 179, 208, 0.4);
+    left: 0;
+    /* top: em; */
+    padding: 50px 40px 0;
+    border-radius: 10px;
+}
+.case_box .content .cont .info .title .logo {
+    float: left;
+    padding-right: 10%;
+}
+.case_box .content .cont .info .title:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+.case_box .content .cont .info .title h4 {
+    /* float: left; */
+    display: inline-block;
+    padding-left: 28%;
+    /* padding-top: 30px; */
+    font-size: 24px;
+    color: #081232;
+}
+.case_box .content .cont .info p {
+    font-size: 16px;
+    line-height: 32px;
+    padding-top: 30px;
+    color: #828b9f;
+    text-indent: 2em;
+}
+
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
+.box {
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
