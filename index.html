@@ -1,0 +1,2493 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="applicable-device" content="pc" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>流量统计平台</title>
+
+    <!-- 引入Jquery与Bootstrap的js文件 -->
+    <script src="static/js/jquery-3.4.1.min.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <!-- 导航栏 / 滚动图样式 -->
+    <link rel="stylesheet" href="static/css/navigate.css">
+    <!-- 选项卡样式 -->
+    <link rel="stylesheet" href="static/css/modules.css">
+    <!-- 数据相关样式 -->
+    <link rel="stylesheet" href="static/css/base.css" />
+    <link rel="stylesheet" href="static/css/welcome.css" />
+    <link rel="stylesheet" href="static/css/ciku.css" />
+    <!-- 媒体查询 -->
+    <link rel="stylesheet" href="static/css/suit.css">
+    <style>
+        @media screen and (max-width: 768px) {
+            .left-box {
+                height: auto !important;
+            }
+        }
+
+        .index-recommend-wrap {
+            margin-left: 8.4%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="whole" style="z-index: 1000;">
+        <!-- 顶部导航栏（固定） -->
+        <nav class="navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">LOGO放置<img class='logo' src="" alt=""></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">一级菜单 <span class="sr-only"></span></a></li>
+                        <li><a href="#">一级菜单</a></li>
+                        <li><a href="#">一级菜单</a></li>
+                        <li><a href="#">一级菜单</a></li>
+                        <li><a href="#">一级菜单</a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">一级菜单 <span class="caret_hidden"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">二级菜单</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">二级菜单</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">二级菜单</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">二级菜单</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">二级菜单</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form> -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">登陆</a></li>
+                        <li><a href="#">注册</a></li>
+                        <li><a href="#">免费体验</a></li>
+
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">一级菜单<span class="caret_hidden"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">二级菜单</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">二级菜单</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">二级菜单</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">二级菜单</a></li> -->
+                    </ul>
+                    </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+    <!-- 轮播图 -->
+    <div class="container-fluid lbt" style="width:100%;">
+        <div class="container-fluid text-left" data-spy="scroll" data-target="#navbar-example" data-offset="0"
+            style="height: auto; position: relative; top:60px; widows: 1180px;">
+            <!--轮播区域-->
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!--轮播指标-->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+                <!--轮播指标-->
+                <!--轮播项目-->
+                <div class="carousel-inner" style="height: auto; z-index: -1;">
+                    <div class="item active">
+                        <img src="static\images\bg1.png" alt="First slide">
+                        <div class="carousel-caption"></div>
+                    </div>
+                    <div class="item">
+                        <img src="static\images\bg2.png" alt="First slide">
+                        <div class="carousel-caption"></div>
+                    </div>
+                    <div class="item">
+                        <img src="static\images\bg3.png" alt="First slide">
+                        <div class="carousel-caption"></div>
+                    </div>
+                    <div class="item">
+                        <img src="static\images\bg4.png" alt="First slide">
+                        <div class="carousel-caption"></div>
+                    </div>
+                </div>
+                <!--轮播控制器-->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                <!--轮播控制器-->
+            </div>
+        </div>
+    </div>
+    <!-- 数据1 -->
+    <div class="module-wrap" style="display:table;width:80%;margin:14px 0 0 6%;padding-top: 50px;" id="page-8">
+        <div class="name" style="float:left;width:35%;margin-left: 8.5%;">
+            <div class="name-wrap">
+                <div>数据更新动态</div>
+
+            </div>
+
+            <div class="update-wrap-list">
+                <div class="left-box" style="width:400px;height:186px;">
+                    <div class="left" style="width:240px;">
+                        <div style="display:table;width:100%;padding-top: 25%;" class="data_1">
+                            <div class="upper_left" style="float: left;
+display: block
+">
+                                <a href="#" target="_blank">
+                                    <span style="font-size: 24px;color: #0a7df4;">83.02</span>亿
+                                </a>
+                                <p style="color:#bbb;font-size: 12px;">长尾词总量</p>
+                            </div>
+                            <div class="upper_right" style="float:right;display:block">
+                                <p style="height:36px;text-align:right;font-weight:700;">
+                                    <a href="#"
+                                        style="position:relative;top:13px;display: inline-block;font-size: 14px;"
+                                        target="_blank">
+                                        3,459,035
+                                    </a>
+                                </p>
+                                <p style="color: #bbb;font-size: 12px;">5月19日更新量</p>
+                            </div>
+                        </div>
+
+                        <!-- <div class="line_02 container-fluid" style="display: none;"><span></span></div> -->
+
+                    </div>
+                    <div class="right" style="width:158px">
+                        <div class="content" href="javascript:;">
+                            <a class="item data_3" style="padding-bottom:25px" target="_blank">
+                                <div class="percentage up_per" style="top: 20%; right: 8px;">
+                                    87%
+                                </div>
+                                <div class="desc">
+                                    <p class="number">15,957,737</p>
+                                    <p class="desc-title">流量数据更新</p>
+                                </div>
+                                <svg width="50" height="50" style="float:right">
+                                    <circle cx="25" cy="25" r="20" stroke-width="5" stroke="#D1D3D7" fill="none">
+                                    </circle>
+
+
+                                    <circle cx="25" cy="25" r="20" stroke-width="5" stroke="#0c7df5" fill="none"
+                                        transform="matrix(0,-1,1,0,0,50)"
+                                        stroke-dasharray="109.327424344925 16.3362817986669"></circle>
+                                </svg>
+                            </a>
+                            <a class="item data_2" style="padding-top:25px;" href="#" target="_blank">
+                                <div class="percentage low_per" style=" margin-top: 2px; top: 50%; right: 8px;">
+                                    75%
+                                </div>
+                                <div class="desc">
+                                    <p class="number">2,154,530</p>
+                                    <p class="desc-title">指数数据更新</p>
+                                </div>
+                                <svg width="50" height="50" style="float: right ">
+                                    <circle cx="25" cy="25" r="20" stroke-width="5" stroke="#D1D3D7" fill="none">
+                                    </circle>
+
+                                    <circle cx="25" cy="25" r="20" stroke-width="5" stroke="#0c7df5" fill="none"
+                                        transform="matrix(0,-1,1,0,0,50)"
+                                        stroke-dasharray="94.2477796076938 31.4159265358979"></circle>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line_02 container-fluid" style="display: none;"><span></span></div>
+
+        </div>
+        <div class="lower" style="float:left;width:25%;margin-left: -3.5%;">
+            <div class="name-wrap">
+                <div>今日监控进度</div>
+            </div>
+
+            <!-- <div class="line_02 container-fluid" style="display: none;"><span></span></div> -->
+
+            <div class="body-wrap update-wrap-day">
+                <ul class="ul-data">
+                    <li class="zs">
+                        <div>
+                            <em>3,450,060</em>
+                            <div class="info">排名样本词覆盖量</div>
+                        </div>
+                    </li>
+                    <li class="ys" style="width: 40%;">
+                        <div>
+                            <em>10,821</em>
+                            <div class="info">昨天新增样本指数词</div>
+                        </div>
+                    </li>
+                    <li class="zx" style="padding-top: 50px; margin-bottom: 20px;">
+                        <div>
+                            <em>19,202</em>
+                            <div class="info">昨天淘汰样本指数词</div>
+                        </div>
+                    </li>
+                    <li class="yx" style="padding-top: 50px;width: 40%; ">
+
+                        <a href="#" target="_blank">
+                            <em>7</em>
+                            <div class="info">昨日更新违规词</div>
+                        </a>
+                    </li>
+                </ul>
+                <div style="height:1px;margin: 0 20px;"></div>
+            </div>
+        </div>
+        <div class="lower" style="float:left;width:25%;margin-left: 2.1%;">
+            <div class="name-wrap">
+                <div>今日监控进度</div>
+            </div>
+
+            <!-- <div class="line_02 container-fluid" style="display: none;"><span></span></div> -->
+
+            <div class="body-wrap update-wrap-day">
+                <ul class="ul-data">
+                    <li class="zs">
+                        <div>
+                            <em>3,450,060</em>
+                            <div class="info">排名样本词覆盖量</div>
+                        </div>
+                    </li>
+                    <li class="ys" style="width: 40%;">
+                        <div>
+                            <em>10,821</em>
+                            <div class="info">昨天新增样本指数词</div>
+                        </div>
+                    </li>
+                    <li class="zx" style="padding-top: 50px; margin-bottom: 20px;">
+                        <div>
+                            <em>19,202</em>
+                            <div class="info">昨天淘汰样本指数词</div>
+                        </div>
+                    </li>
+                    <li class="yx" style="padding-top: 50px;width: 40%; ">
+
+                        <a href="#" target="_blank">
+                            <em>7</em>
+                            <div class="info">昨日更新违规词</div>
+                        </a>
+                    </li>
+                </ul>
+                <div style="height:1px;margin: 0 20px;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 数据2 -->
+    <div class="module-wrap recommend container-fluid" id="page-4" style="position: relative; z-index: auto;">
+        <div class="index-recommend-wrap">
+            <div class="name-wrap">
+
+            </div>
+            <div>
+                <div class="conclusion-wrap" style="width: 174px;height:190px;">
+                    <div>
+                        <div>
+                            <a href="#" class="number" target="_blank">326</a>
+                            <p>开通行业数</p>
+                        </div>
+                        <br />
+
+
+                    </div>
+                </div>
+
+                <div class="hot-wrap" style="width:372px">
+                    <ul>
+                        <li>
+                            <div class="layer">
+                                <a class="btn" href="#" target="_blank">查看</a>
+                            </div>
+                            <div class="left">
+                                <img src="static\images\c5.png" />
+                            </div>
+                            <div class="right">
+                                <div class="name">PC软件 <i class="icon-ciku-hot"></i></div>
+                                <div class="count">
+                                    词库总量：7.07亿
+                                </div>
+                                <div class="count-sum">指数词量：64万</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="layer">
+                                <a class="btn" href="#" target="_blank">查看</a>
+                            </div>
+                            <div class="left">
+                                <img src="static\images\c5.png" />
+                            </div>
+                            <div class="right">
+                                <div class="name">电商 <i class="icon-ciku-hot"></i></div>
+                                <div class="count">
+                                    词库总量：6.04亿
+                                </div>
+                                <div class="count-sum">指数词量：81万</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="layer">
+                                <a class="btn" href="#" target="_blank">查看</a>
+                            </div>
+                            <div class="left">
+                                <img src="static\images\c5.png" />
+                            </div>
+                            <div class="right">
+                                <div class="name">泛娱乐 <i class="icon-ciku-hot"></i></div>
+                                <div class="count">
+                                    词库总量：4.53亿
+                                </div>
+                                <div class="count-sum">指数词量：79万</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="layer">
+                                <a class="btn" href="#" target="_blank">查看</a>
+                            </div>
+                            <div class="left">
+                                <img src="static\images\c5.png" />
+                            </div>
+                            <div class="right">
+                                <div class="name">手游 <i class="icon-ciku-hot"></i></div>
+                                <div class="count">
+                                    词库总量：3.93亿
+                                </div>
+                                <div class="count-sum">指数词量：42万</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="new-wrap" style="width: 562px;">
+                    <ul>
+                        <li>
+                            <div class="layer">
+                                <a class="btn" href="#" target="_blank">查看</a>
+                            </div>
+                            <div class="left">
+                                <img src="static\images\c5.png" />
+                            </div>
+                            <div class="right">
+                                <div class="name">门窗 <i class="icon-ciku-new"></i></div>
+                                <div class="count">
+                                    词库总量：34万
+                                </div>
+                                <div class="count-sum">指数词量：627</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="layer">
+                                <a class="btn" href="#" target="_blank">查看</a>
+                            </div>
+                            <div class="left">
+                                <img src="static\images\c5.png" />
+                            </div>
+                            <div class="right">
+                                <div class="name">泵阀 <i class="icon-ciku-new"></i></div>
+                                <div class="count">
+                                    词库总量：36万
+                                </div>
+                                <div class="count-sum">指数词量：1573</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="layer">
+                                <a class="btn" href="#" target="_blank">查看</a>
+                            </div>
+                            <div class="left">
+                                <img src="static\images\c5.png" />
+                            </div>
+                            <div class="right">
+                                <div class="name">配音 <i class="icon-ciku-new"></i></div>
+                                <div class="count">
+                                    词库总量：3.4万
+                                </div>
+                                <div class="count-sum">指数词量：103</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="layer">
+                                <a class="btn" href="#" target="_blank">查看</a>
+                            </div>
+                            <div class="left">
+                                <img src="static\images\c5.png" />
+                            </div>
+                            <div class="right">
+                                <div class="name">人力资源 <i class="icon-ciku-new"></i></div>
+                                <div class="count">
+                                    词库总量：73万
+                                </div>
+                                <div class="count-sum">指数词量：2304</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="layer">
+                                <a class="btn" href="#" target="_blank">查看</a>
+                            </div>
+                            <div class="left">
+                                <img src="static\images\c5.png" />
+                            </div>
+                            <div class="right">
+                                <div class="name">工商服务 <i class="icon-ciku-new"></i></div>
+                                <div class="count">
+                                    词库总量：11万
+                                </div>
+                                <div class="count-sum">指数词量：805</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="layer">
+                                <a class="btn" href="#" target="_blank">查看</a>
+                            </div>
+                            <div class="left">
+                                <img src="static\images\c5.png" />
+                            </div>
+                            <div class="right">
+                                <div class="name">海关 <i class="icon-ciku-new"></i></div>
+                                <div class="count">
+                                    词库总量：7.8万
+                                </div>
+                                <div class="count-sum">指数词量：236</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 分割线 -->
+    <div class="line_02 container-fluid"><span></span></div>
+    <!-- 介绍词1 -->
+    <div class="case_box container-fluid">
+        <div class="box ">
+            <h3>可信赖的流量分析产品体系</h3>
+            <p class="dec">致力于帮助企业级用户精准优化关键字和快速提升排名，助力平台成长与产业发展</p>
+        </div>
+
+        <!-- 选项卡 -->
+        <div class="category w1200">
+            <ul>
+                <li class="active">海量资源</li>
+                <li>服务支持</li>
+                <li>支付渠道</li>
+            </ul>
+        </div>
+        <!-- 模块1 -->
+        <div class="content w1200">
+            <div class="cont active">
+                <img class="bg" src="static/images/timg.png" />
+                <div class="info">
+                    <div class="title">
+                        <!-- <div class="logo"><img class="img-responsive" style="width: 100px;" src="../images/logo.png" />
+                        </div> -->
+                        <h4>高效的资源配置</h4>
+                    </div>
+                    <p>整合微信，手机QQ，应用宝，手机QQ游戏大厅，手机QQ空间，手机QQ浏览器，腾讯新闻APP等移动平台优势资源，分享腾讯海量用户及关系链，并针对各平台用户特征，定制专属运营方案。</p>
+                </div>
+            </div>
+            <div class="cont">
+                <img class="bg" src="static/images/timg.png" />
+                <div class="info">
+                    <div class="title">
+                        <!-- <div class="logo"><img class="img-responsive" style="width: 100px;" src="../images/logo.png" />
+                        </div> -->
+                        <h4>优质的服务支持</h4>
+                    </div>
+                    <p>提供高可用的服务器、网络、客服资源，和运维、经营分析、社区互动支持，提供详细的运营数据，在产品接入、运营各阶段提供专业意见，并配置专门的客服团队。</p>
+                </div>
+            </div>
+            <div class="cont">
+                <img class="bg" src="static/images/timg.png" />
+                <div class="info">
+                    <div class="title">
+                        <!-- <div class="logo"><img class="img-responsive" style="width: 100px;" src="../images/logo.png" />
+                        </div> -->
+                        <h4>便捷的支付渠道</h4>
+                    </div>
+                    <p>腾讯独有的Q币Q点、QB卡、财付通、快捷支付、微信支付、手机充值卡等核心支付渠道，有效提升移动端付费成功率，为用户提供更好的支付体验。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 行业词库 -->
+    <div id="app" class="_5118-wraper">
+        <div class="_5118-ciku">
+            <div class="classify-wrap" id="classify-list">
+                <div class="main">
+                    <div class="big-title"><span>全部分类</span></div>
+
+                    <dl class="classify-list">
+                        <dt id="125">游戏应用</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>手游</span><br>
+                                        词量： 3.93亿
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>游戏</span><br>
+                                        词量： 1.88亿
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>APP</span><br>
+                                        词量： 1.13亿
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>页游</span><br>
+                                        词量： 368万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>小游戏</span><br>
+                                        词量： 304万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>电子竞技</span><br>
+                                        词量： 62万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>外挂</span><br>
+                                        词量： 1.1万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="129">金融财经</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>股市基金</span><br>
+                                        词量： 3387万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>理财</span><br>
+                                        词量： 1046万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>贷款</span><br>
+                                        词量： 877万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>保险</span><br>
+                                        词量： 657万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>金融财经</span><br>
+                                        词量： 491万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>会计</span><br>
+                                        词量： 217万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>外汇</span><br>
+                                        词量： 116万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>银行</span><br>
+                                        词量： 53万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>期货</span><br>
+                                        词量： 50万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>网贷</span><br>
+                                        词量： 43万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>融资</span><br>
+                                        词量： 28万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>拍卖</span><br>
+                                        词量： 12万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>财务</span><br>
+                                        词量： 10万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>信托</span><br>
+                                        词量： 3.6万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>卡盟</span><br>
+                                        词量： 3万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="29">影视娱乐</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>泛娱乐</span><br>
+                                        词量： 4.53亿
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>影视</span><br>
+                                        词量： 1.21亿
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>电影</span><br>
+                                        词量： 7166万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>娱乐八卦</span><br>
+                                        词量： 6793万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>动漫</span><br>
+                                        词量： 1176万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="133">生活服务</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>旅游</span><br>
+                                        词量： 1.64亿
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>法律</span><br>
+                                        词量： 5254万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>占卜算命</span><br>
+                                        词量： 3602万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>起名</span><br>
+                                        词量： 1090万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>古玩收藏</span><br>
+                                        词量： 1071万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>收藏</span><br>
+                                        词量： 819万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>物流快递</span><br>
+                                        词量： 574万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>快递</span><br>
+                                        词量： 574万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>天气</span><br>
+                                        词量： 560万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>彩票</span><br>
+                                        词量： 505万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>宠物</span><br>
+                                        词量： 499万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>政府</span><br>
+                                        词量： 357万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>佛教</span><br>
+                                        词量： 356万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>摄影</span><br>
+                                        词量： 313万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>广场舞</span><br>
+                                        词量： 308万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>垂钓</span><br>
+                                        词量： 290万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>发型设计</span><br>
+                                        词量： 243万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>基督教</span><br>
+                                        词量： 169万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>酒店</span><br>
+                                        词量： 164万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>家电维修</span><br>
+                                        词量： 131万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>吉他</span><br>
+                                        词量： 123万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>维修</span><br>
+                                        词量： 93万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>票务</span><br>
+                                        词量： 89万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>信息咨询</span><br>
+                                        词量： 82万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>刑事律师</span><br>
+                                        词量： 62万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>成人用品</span><br>
+                                        词量： 47万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>眼镜</span><br>
+                                        词量： 41万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>废品</span><br>
+                                        词量： 23万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>移民</span><br>
+                                        词量： 22万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>奇闻异事</span><br>
+                                        词量： 21万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>风水</span><br>
+                                        词量： 18万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>广告</span><br>
+                                        词量： 18万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>交友</span><br>
+                                        词量： 18万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>棋牌</span><br>
+                                        词量： 17万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>物业</span><br>
+                                        词量： 15万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>婚恋</span><br>
+                                        词量： 13万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>婚庆</span><br>
+                                        词量： 11万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>家政</span><br>
+                                        词量： 10万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>地震</span><br>
+                                        词量： 6.9万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>租赁</span><br>
+                                        词量： 5.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>爱恋挽回</span><br>
+                                        词量： 4.9万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>美甲</span><br>
+                                        词量： 3万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>兽医</span><br>
+                                        词量： 2.8万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>标牌标识</span><br>
+                                        词量： 2.7万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>宠物医院</span><br>
+                                        词量： 2.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>博物馆</span><br>
+                                        词量： 2.1万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>啤酒</span><br>
+                                        词量： 2万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>清洁业</span><br>
+                                        词量： 1.5万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="26">医疗健康</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>健康</span><br>
+                                        词量： 3.88亿
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>母婴</span><br>
+                                        词量： 2.14亿
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>整形美容</span><br>
+                                        词量： 1739万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>女性</span><br>
+                                        词量： 1587万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>美容</span><br>
+                                        词量： 1198万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>药品</span><br>
+                                        词量： 821万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>整形</span><br>
+                                        词量： 438万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>妇科</span><br>
+                                        词量： 121万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>减肥</span><br>
+                                        词量： 112万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>口腔牙科</span><br>
+                                        词量： 88万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>健身健美</span><br>
+                                        词量： 79万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>两性</span><br>
+                                        词量： 44万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>眼科</span><br>
+                                        词量： 38万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>中药</span><br>
+                                        词量： 37万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>瘦身</span><br>
+                                        词量： 29万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>男科</span><br>
+                                        词量： 17万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>不孕不育</span><br>
+                                        词量： 13万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>肿瘤</span><br>
+                                        词量： 11万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>保健品</span><br>
+                                        词量： 7.1万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>月子</span><br>
+                                        词量： 3.3万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>儿科</span><br>
+                                        词量： 2.7万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>痤疮</span><br>
+                                        词量： 2.6万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>生育</span><br>
+                                        词量： 2.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>生物科技</span><br>
+                                        词量： 2.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>足疗按摩</span><br>
+                                        词量： 1.6万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>性病</span><br>
+                                        词量： 1.5万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="131">公司管理</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>招聘</span><br>
+                                        词量： 9409万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>加盟</span><br>
+                                        词量： 793万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>招投标</span><br>
+                                        词量： 574万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>税务</span><br>
+                                        词量： 168万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>会展</span><br>
+                                        词量： 75万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>人力资源</span><br>
+                                        词量： 73万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>知识产权</span><br>
+                                        词量： 37万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>企业信息</span><br>
+                                        词量： 27万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>企业管理</span><br>
+                                        词量： 13万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>工商服务</span><br>
+                                        词量： 11万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>简历</span><br>
+                                        词量： 10万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>商标</span><br>
+                                        词量： 10万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>专利</span><br>
+                                        词量： 6.5万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="130">文学艺术</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>漫画</span><br>
+                                        词量： 7767万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>音乐</span><br>
+                                        词量： 2666万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>小说</span><br>
+                                        词量： 1370万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>乐器演奏</span><br>
+                                        词量： 390万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>诗歌</span><br>
+                                        词量： 284万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>舞蹈</span><br>
+                                        词量： 273万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>书法</span><br>
+                                        词量： 142万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>图书</span><br>
+                                        词量： 94万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>戏剧</span><br>
+                                        词量： 21万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>雕刻</span><br>
+                                        词量： 2.6万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>刺绣</span><br>
+                                        词量： 1.2万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="127">汽车汽配</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>汽车</span><br>
+                                        词量： 9158万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>列车汽运</span><br>
+                                        词量： 4234万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>二手车</span><br>
+                                        词量： 1741万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>摩托</span><br>
+                                        词量： 424万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>卡车</span><br>
+                                        词量： 29万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>汽配</span><br>
+                                        词量： 24万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>轮胎</span><br>
+                                        词量： 3.5万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="128">房产装修</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>装修</span><br>
+                                        词量： 6170万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>房产</span><br>
+                                        词量： 5644万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>租房</span><br>
+                                        词量： 4627万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>家具</span><br>
+                                        词量： 276万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>建材</span><br>
+                                        词量： 78万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>全屋定制</span><br>
+                                        词量： 45万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>卫浴</span><br>
+                                        词量： 13万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>锅炉</span><br>
+                                        词量： 9.8万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>搬家</span><br>
+                                        词量： 4.6万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>货架</span><br>
+                                        词量： 3.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>窗帘</span><br>
+                                        词量： 2.8万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="27">教育培训</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>教育</span><br>
+                                        词量： 3.51亿
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>散文作文</span><br>
+                                        词量： 7488万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>高中</span><br>
+                                        词量： 1645万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>小学</span><br>
+                                        词量： 1614万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>公务员</span><br>
+                                        词量： 1378万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>职业培训</span><br>
+                                        词量： 1312万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>考研</span><br>
+                                        词量： 782万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>研究生</span><br>
+                                        词量： 701万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>驾校</span><br>
+                                        词量： 588万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>中学</span><br>
+                                        词量： 545万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>留学</span><br>
+                                        词量： 452万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>论文</span><br>
+                                        词量： 382万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>大学</span><br>
+                                        词量： 183万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>日语培训</span><br>
+                                        词量： 100万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>英语培训</span><br>
+                                        词量： 84万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>在职研究生</span><br>
+                                        词量： 51万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>早教</span><br>
+                                        词量： 18万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>翻译</span><br>
+                                        词量： 16万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>数学</span><br>
+                                        词量： 12万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>IT教育</span><br>
+                                        词量： 7.7万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>设计培训</span><br>
+                                        词量： 5.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>测绘</span><br>
+                                        词量： 5.1万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>绘画设计</span><br>
+                                        词量： 3.9万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="136">网络技术</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>PC软件</span><br>
+                                        词量： 7.07亿
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>电商</span><br>
+                                        词量： 6.04亿
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>编程</span><br>
+                                        词量： 1.56亿
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>素材</span><br>
+                                        词量： 7353万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>科技</span><br>
+                                        词量： 7342万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>QQ相关</span><br>
+                                        词量： 3169万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>U盘装机</span><br>
+                                        词量： 149万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>源码</span><br>
+                                        词量： 121万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>直播平台</span><br>
+                                        词量： 103万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>字体</span><br>
+                                        词量： 89万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>网站建设</span><br>
+                                        词量： 72万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>区块链</span><br>
+                                        词量： 36万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>比特币</span><br>
+                                        词量： 35万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>网络安全</span><br>
+                                        词量： 28万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>域名主机</span><br>
+                                        词量： 20万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>电脑配件</span><br>
+                                        词量： 16万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>大数据</span><br>
+                                        词量： 15万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>网络营销</span><br>
+                                        词量： 12万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>耗材</span><br>
+                                        词量： 4.7万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>网赚</span><br>
+                                        词量： 4.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>物联网</span><br>
+                                        词量： 3.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>配音</span><br>
+                                        词量： 3.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>淘客</span><br>
+                                        词量： 2.8万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>虚拟现实</span><br>
+                                        词量： 1.9万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>数据恢复</span><br>
+                                        词量： 1.7万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>域名空间</span><br>
+                                        词量： 1.7万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>小程序</span><br>
+                                        词量： 1.4万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="132">购物败家</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>团购</span><br>
+                                        词量： 1381万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>手机</span><br>
+                                        词量： 1346万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>服装</span><br>
+                                        词量： 939万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>手表</span><br>
+                                        词量： 311万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>珠宝饰品</span><br>
+                                        词量： 310万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>化妆</span><br>
+                                        词量： 294万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>**</span><br>
+                                        词量： 104万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>微商</span><br>
+                                        词量： 39万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>礼品工艺品</span><br>
+                                        词量： 31万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>笔记本</span><br>
+                                        词量： 16万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>玩具</span><br>
+                                        词量： 14万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>鞋类</span><br>
+                                        词量： 13万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>奢侈品</span><br>
+                                        词量： 13万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>***</span><br>
+                                        词量： 5.2万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>内衣</span><br>
+                                        词量： 2.7万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>文具</span><br>
+                                        词量： 2.6万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>皮革</span><br>
+                                        词量： 2.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>箱包</span><br>
+                                        词量： 2.2万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>床上用品</span><br>
+                                        词量： 1.4万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="134">厨房美食</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>美食</span><br>
+                                        词量： 2039万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>菜谱</span><br>
+                                        词量： 2018万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>酒类</span><br>
+                                        词量： 370万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>茶叶</span><br>
+                                        词量： 133万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>红酒</span><br>
+                                        词量： 79万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>餐饮</span><br>
+                                        词量： 43万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>西餐</span><br>
+                                        词量： 11万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>餐饮加盟</span><br>
+                                        词量： 8.8万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>厨房</span><br>
+                                        词量： 6.1万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>蜂蜜</span><br>
+                                        词量： 5.3万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>刀具</span><br>
+                                        词量： 2.3万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>火锅</span><br>
+                                        词量： 2.1万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>水果</span><br>
+                                        词量： 1.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>生鲜</span><br>
+                                        词量： 1.1万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="126">仪器机械</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>电子</span><br>
+                                        词量： 1181万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>仪器仪表</span><br>
+                                        词量： 876万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>农业机械</span><br>
+                                        词量： 121万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>电子元器件</span><br>
+                                        词量： 118万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>音响器材</span><br>
+                                        词量： 118万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>安防</span><br>
+                                        词量： 73万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>工控</span><br>
+                                        词量： 63万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>医疗设备</span><br>
+                                        词量： 46万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>包装印刷</span><br>
+                                        词量： 44万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>五金</span><br>
+                                        词量： 41万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>土木工程</span><br>
+                                        词量： 35万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>包装</span><br>
+                                        词量： 32万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>采暖设备</span><br>
+                                        词量： 28万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>硬件</span><br>
+                                        词量： 21万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>机床</span><br>
+                                        词量： 21万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>船舶</span><br>
+                                        词量： 14万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>保温材料</span><br>
+                                        词量： 12万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>投影</span><br>
+                                        词量： 10万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>纺织</span><br>
+                                        词量： 9.9万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>餐饮设备</span><br>
+                                        词量： 7.1万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>加工中心</span><br>
+                                        词量： 5.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>勘探测绘</span><br>
+                                        词量： 4.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>清洁设备</span><br>
+                                        词量： 3.9万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>齿轮</span><br>
+                                        词量： 3.6万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>无人机</span><br>
+                                        词量： 3.6万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>照明电气</span><br>
+                                        词量： 2.5万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>检测</span><br>
+                                        词量： 2.2万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>空调</span><br>
+                                        词量： 1.5万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>空气净化器</span><br>
+                                        词量： 1.3万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="135">国防军事</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>军事</span><br>
+                                        词量： 362万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>航空航天</span><br>
+                                        词量： 70万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>海关</span><br>
+                                        词量： 7.8万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="137">农业林园</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>畜牧</span><br>
+                                        词量： 111万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>养殖</span><br>
+                                        词量： 94万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>花卉</span><br>
+                                        词量： 53万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>水产</span><br>
+                                        词量： 37万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>园林景观</span><br>
+                                        词量： 37万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>木业</span><br>
+                                        词量： 31万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>木工</span><br>
+                                        词量： 2.9万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>园艺</span><br>
+                                        词量： 1万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="138">化工轻工</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>化工</span><br>
+                                        词量： 63万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>光伏</span><br>
+                                        词量： 43万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>塑料</span><br>
+                                        词量： 37万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>陶瓷</span><br>
+                                        词量： 32万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>玻璃</span><br>
+                                        词量： 31万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>新能源</span><br>
+                                        词量： 29万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>农药</span><br>
+                                        词量： 26万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>能源</span><br>
+                                        词量： 25万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>饲料</span><br>
+                                        词量： 21万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>环保</span><br>
+                                        词量： 17万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>石材</span><br>
+                                        词量： 12万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>有色金属</span><br>
+                                        词量： 10万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>涂料</span><br>
+                                        词量： 10万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>铝业</span><br>
+                                        词量： 10万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>煤炭</span><br>
+                                        词量： 9.1万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>贵金属</span><br>
+                                        词量： 8.7万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>化肥</span><br>
+                                        词量： 3.4万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>纸业</span><br>
+                                        词量： 3.1万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>天然气</span><br>
+                                        词量： 2.7万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>烟花</span><br>
+                                        词量： 1.2万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="classify-list">
+                        <dt id="471">体育运动</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>体育</span><br>
+                                        词量： 2033万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>足球</span><br>
+                                        词量： 744万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>篮球</span><br>
+                                        词量： 272万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>自行车</span><br>
+                                        词量： 99万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>武术</span><br>
+                                        词量： 29万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>太极拳</span><br>
+                                        词量： 13万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>户外</span><br>
+                                        词量： 11万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>跑步</span><br>
+                                        词量： 3.7万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>高尔夫球</span><br>
+                                        词量： 3.3万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>游泳</span><br>
+                                        词量： 2.7万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>瑜伽</span><br>
+                                        词量： 2.6万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+
+                    <dl class="classify-list">
+                        <dt>其它</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>泵阀</span><br>
+                                        词量：36万
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span>门窗</span><br>
+                                        词量：34万
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--选项卡js-->
+    <script type="text/javascript">
+        $(function () {
+            $('.category ul li').mouseover(function () {
+                var i = $(this).index();
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.content .cont').eq(i).addClass('active').siblings().removeClass('active');
+            })
+        });
+    </script>
+</body>
+
+</html>
